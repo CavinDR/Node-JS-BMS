@@ -1,0 +1,24 @@
+.btn-add {
+  margin-bottom: 30px;
+}
+
+.table-shop-list input {
+  display: none;
+}
+
+.table-shop-list .btn-ok,
+.table-shop-list .btn-cancel {
+  display: none;
+}
+
+
+.table-shop-list .edit span {display: none;}
+.table-shop-list .edit input {display: inline-block;}
+.table-shop-list .edit .btn-ok,
+.table-shop-list .edit .btn-cancel {
+  display: inline-block;
+}
+.table-shop-list .edit .btn-edit,
+.table-shop-list .edit .btn-del {
+  display: none;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+  <div class="container">
+      <h1>注册</h1>
+      <form class="form-inline" id="register-form">
+        <div class="form-group">
+          <label class="sr-only" for="inputUsername">用户名</label>
+          <input type="text" class="form-control" id="inputUsername" placeholder="请输入用户名">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="inputPassword">密码</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="请输入密码">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="inputPassword2">确认密码</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="请输入密码">
+          </div>
+        <button type="submit" class="btn btn-default">注册</button>
+      </form>
+  </div>
+  <script>
+    $('#register-form').on('submit', e => {
+      const username = $('#inputUsername').val()
+      const password = $('#inputPassword').val()
+      // TODO：获取确认密码，验证两次输入是否一致
+      $.post('/api/v1/user/register', {username, password}, resp => {
+        console.log(resp)
+        // TODO: 判断code===200跳转登录页面
+      })
+      e.preventDefault()
+    })
+  </script>
+</body>
+</html>
